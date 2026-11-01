@@ -26,3 +26,10 @@ torch>=2.2,<3.0
 
 # Scoring the baseline
 scikit-learn>=1.3,<2.0
+
+
+# Loads your API key out of .env
+python-dotenv>=1.0,<1.2
+
+# Calls the model that writes outfit suggestions and fit cards.
+google-genai>=1.0,<2.0

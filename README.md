@@ -42,6 +42,11 @@
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
 
+Google reviews of restaurants in Santa Clara California, focusing on Japanese restaurants.
+Classifer sorts posts into 
+1. positive: will go again, highly recommended by reviewer. 
+2. Neutral, reviewer have both negaitve and positive comments or recommend others to go if have don't mind some trade offs or really craving a dish.
+3. negative: Will not go again, had a poor experience.
 
 
 ---
@@ -54,35 +59,80 @@
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
+### `positive`
 
 **Definition:**
+positive: customer explicitly expresses intent to go again or positive comments dominate in cases where no such comment was expressed.
 
 **Example 1:**
->
+>Probably one of the first customers here since they just opened and there were almost no reviews when I came, so I honestly kept my expectations pretty neutral.
+
+After dining here, I was surprised by how polished everything already felt. It didn’t feel like a newly opened place still figuring things out.
+
+Sitting at the counter was a great experience — you can watch the chef prepare and serve each course, and the pacing felt smooth and relaxed. No rushing, no trying too hard to create a luxury atmosphere, just a comfortable and focused dining experience.
+
+The omakase itself had a nice flow. From appetizers to sashimi, warm dishes, and finally the nigiri, each course transitioned naturally and didn’t feel repetitive. A few pieces of nigiri really stood out — the fish quality was excellent and the rice was balanced without overpowering the flavor. I especially enjoyed the seared course and some of the tuna selections.
+
+One thing that surprised me: the portion was actually very satisfying. I expected a typical fine dining omakase where you leave wanting more, but this was a full meal and I left genuinely full — not because of extra rice, but because the pacing and portions were thoughtfully done.
+
+Since the restaurant is brand new and doesn’t have many reviews yet, I hope they can keep this level of quality consistently.
+
+Would definitely come back
 
 **Example 2:**
->
+>Had an amazing all-you-can-eat Wagyu hot pot experience here! The quality of the meat was excellent — beautifully marbled, tender, and incredibly flavorful. Every plate came out fresh, and it was hard to stop ordering more.
 
-### `label_two`
+The broth was rich and delicious without overpowering the ingredients, and there was a great variety of vegetables, sides, and sauces to choose from. Everything felt high quality and well maintained.
+
+The service was attentive, and orders arrived quickly throughout the meal. For anyone who loves Wagyu and hot pot, this place is absolutely worth a visit.
+
+Definitely one of the better AYCE hot pot spots I’ve been to, and I’ll be coming back for sure! 🍲🥩✨
+
+### `negative`
 
 **Definition:**
-
+negative: Will not go again is expressed by customer.
 **Example 1:**
->
+>"I really like the concept as a person who was brought up in Tokyo ie part conbini, osouzaiya, deli.  I have several minor issues with their food quality though.  Ordered deluxe okonomiyaki which was closer to Hiroshima style with noodles, but the noodles were hard.  Crunchy hard.  And way, way too much mayo .  All I could taste was mayo.  Sickening amount of mayo spread on it.
+
+Next item I purchased was 5 pieces of oinarisan ie stuffed deep fried tofu skin with different topping. Topping was generally ok, except few pieces slathered with too much mayo again. Go easy on mayo and they would be better."
 
 **Example 2:**
->
+>Came here for lunch. Nearly empty restaurant but we sat with our menus waiting for service for 15 minutes. The woman who seated us and gave us our menus took the food order from a guest who arrived after us and then completely ignored us while she went to fold napkins and set up empty tables. We were no longer looking at our menus and kept trying to make eye contact with her. We got up and left so I’m sorry I don’t know how the food is.
+
+
+### `neutral`
+**Definition:**
+neutral: reviewer have equal amount of negaitve and positive comments or recommend others to go if have don't mind some trade offs or really craving a dish.
+**Example 1:**
+>"We had 4 dishes and a pot of oolong tea.  Tea was not strong which was good for night time 😊.  Sashimi 3 kinds was fresh, but thin slices.
+Crispy chicken skin was pretty good. Dipping it with the sauce gave different flavor but made it less crispy.  I preferred having the crispy chicken skin without sauce.
+Squid was a bit salty.  The pork belly skewer was quite special flavor - tasty!
+Lychee sorbet was really good! It had a bit touch of yuzu to me… Highly recommend it.  It refreshed the mouth😋😋😋
+
+Staff were very friendly and nice.  Service was quick.  The restaurants was pretty clean and not crowded with the table setting.  It was busy but the level of noise was acceptable until a group of people came in.🤪
+
+I recommend this restaurant for people are not looking for sushi rolls"
+
+**Example 2:**
+>"KOKO Izakaya & Oyster House was a good spot for a quick Sunday lunch, especially if you’re craving sushi. The restaurant was quite busy, which created a lively atmosphere. We ordered a few sushi rolls, miso soup, and seaweed salad. While the presentation wasn’t particularly impressive, the food was fresh and met our expectations. The miso soup was simple but comforting, and the kids really enjoyed it. The seaweed salad was fresh, and the sushi tasted good with generous portions of fish.
+
+The service was decent overall, although we had to get our server’s attention a few times since he wasn’t checking in on our table very often. It wasn’t a bad experience, but a little more attentiveness would have made the meal more enjoyable.
+
+Overall, if you’re looking for a casual place to satisfy a sushi craving without expecting anything fancy, KOKO Izakaya & Oyster House is worth a visit. The food was enjoyable, the restaurant had a nice atmosphere despite being busy, and we’d consider stopping by again when we’re in the area."
 
 ### The hardest boundary
 
 **Which two labels:**
-
+positive vs neutral or negative vs neutral
 **The decision rule I used every time:**
 <!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
      if the tone is heated." -->
-
-
+if reviewer explicity says will go again , then label is positive
+if reviewer explicty says will not go again  then label is negative
+if they recommend people to go for a specific reason or craving or don't mind some trade offs. 
+If no such comment is mentioned, then count postive comments and negative comments and if they are equal, label is "neutral"
+more positive comments then negative --positive, (more negative comments, then label is negative)
 
 ---
 
@@ -92,18 +142,22 @@
      cases. -->
 
 **Where the posts came from:**
-
+Google reviews from google maps platform.
 **How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
 Say so plainly — the disclosure is required, not penalised. -->
+
+I labelled first 43 and collected them from google reviews.
+I gave criteria to AI and asked it to 1. collect the rest using a scraper script.
+2. label for me with a reason and evidence sentence.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| positive | 84 | 44.7% |
+| negative | 54 | 28.7% |
+| neutral | 50 | 26.6% |
+| **Total** |188  | 100% |
 
 **Three hard cases**
 
@@ -112,25 +166,37 @@ Say so plainly — the disclosure is required, not penalised. -->
 
 **1.**
 > *The post:*
->
-> *Could have been:*
->
-> *I chose, because:*
+>>"We had 4 dishes and a pot of oolong tea.  Tea was not strong which was good for night time 😊.  Sashimi 3 kinds was fresh, but thin slices.
+Crispy chicken skin was pretty good. Dipping it with the sauce gave different flavor but made it less crispy.  I preferred having the crispy chicken skin without sauce.
+Squid was a bit salty.  The pork belly skewer was quite special flavor - tasty!
+Lychee sorbet was really good! It had a bit touch of yuzu to me… Highly recommend it.  It refreshed the mouth😋😋😋
 
+Staff were very friendly and nice.  Service was quick.  The restaurants was pretty clean and not crowded with the table setting.  It was busy but the level of noise was acceptable until a group of people came in.🤪
+
+I recommend this restaurant for people are not looking for sushi rolls"
+> *Could have been:*
+positive
+> *I chose, because:*
+There was an explicity statement recommend parties other than the reviewer herself that didn't mind the tradeoffs of not having sushi rolls
 **2.**
 > *The post:*
->
+"I really like the concept as a person who was brought up in Tokyo ie part conbini, osouzaiya, deli.  I have several minor issues with their food quality though.  Ordered deluxe okonomiyaki which was closer to Hiroshima style with noodles, but the noodles were hard.  Crunchy hard.  And way, way too much mayo .  All I could taste was mayo.  Sickening amount of mayo spread on it.
+Next item I purchased was 5 pieces of oinarisan ie stuffed deep fried tofu skin with different topping. Topping was generally ok, except few pieces slathered with too much mayo again. Go easy on mayo and they would be better."
 > *Could have been:*
->
+neutral
 > *I chose, because:*
-
+negative , because negative comments dominated.
 **3.**
 > *The post:*
->
+>"We have been here probably 10 times and it’s always such an interesting and delicious experience!
+ The nigiri is always cut beautifully.
+ The chawanmushi and desserts change seasonally.
+ Sake options are great.
+ We always sit at the bar and sometimes we get some special cuts or some experimental dishes from the chef which always makes our night so much more fun!"
 > *Could have been:*
->
+>neutral
 > *I chose, because:*
-
+positive because positive comments dominated.
 ---
 
 ## The Training Run
