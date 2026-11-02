@@ -53,60 +53,59 @@ whether you hit them:
 
 ## 1.
 
-<!-- Your criterion. It must name a number. -->
+70% accurate on all three labels to be worth using
 
 
 
 **Why this target:**
-
+So restaurant choosers can build confidence on choosing a good restaurant also because the task is just a little more complicted than sentiment analysis except model has to figure out the boudary cases hence the 30% discount.
 
 
 ---
 
 ## 2.
 
-<!-- Your criterion. -->
+Neutral maybe be worsest and allowed
 
 
 
 **Why this target:**
-
+It has the least data 
 
 
 ---
 
 ## 3.
 
-<!-- Your criterion. -->
+If one label is 67% dominate then the model training may struggle to be accurate.
 
 
 
 **Why this target:**
-
+It is more than double of the average of label counts.
 
 
 ---
 
 ## 4.
 
-<!-- Your criterion. -->
+90%
 
 
 
 **Why this target:**
 
-
+the definition is pretty clear other than 10% intention expression discrepencies. 
 
 ---
 
 ## 5.
 
-<!-- Your criterion. -->
-
-
+a confident prediction should not be right more often than an unsure one 80% of the time.
 
 **Why this target:**
 
+I won't want a negatively reviewed restaurant to be misclassified as a positive one 80% of time and fail to identify dissastisfying places.
 
 
 ---
