@@ -59,7 +59,7 @@ Classifer sorts posts into
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `positive`
+### `Positive`
 
 **Definition:**
 positive: customer explicitly expresses intent to go again or positive comments dominate in cases where no such comment was expressed.
@@ -88,7 +88,7 @@ The service was attentive, and orders arrived quickly throughout the meal. For a
 
 Definitely one of the better AYCE hot pot spots I’ve been to, and I’ll be coming back for sure! 🍲🥩✨
 
-### `negative`
+### `Negative`
 
 **Definition:**
 negative: Will not go again is expressed by customer.
@@ -101,7 +101,7 @@ Next item I purchased was 5 pieces of oinarisan ie stuffed deep fried tofu skin 
 >Came here for lunch. Nearly empty restaurant but we sat with our menus waiting for service for 15 minutes. The woman who seated us and gave us our menus took the food order from a guest who arrived after us and then completely ignored us while she went to fold napkins and set up empty tables. We were no longer looking at our menus and kept trying to make eye contact with her. We got up and left so I’m sorry I don’t know how the food is.
 
 
-### `neutral`
+### `Neutral`
 **Definition:**
 neutral: reviewer have equal amount of negaitve and positive comments or recommend others to go if have don't mind some trade offs or really craving a dish.
 **Example 1:**

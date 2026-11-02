@@ -53,7 +53,7 @@ whether you hit them:
 
 ## 1.
 
-70% accurate on all three labels to be worth using
+70% accuracy on all three labels to be worth using
 
 
 
@@ -65,13 +65,12 @@ So restaurant choosers can build confidence on choosing a good restaurant also b
 
 ## 2.
 
-Neutral maybe be worsest and allowed
+Every label F1	≥ 0.60	
 
 
 
 **Why this target:**
-It has the least data 
-
+Ensures each class has a reasonable balance of precision and recall, rather than allowing one class to perform poorly.
 
 ---
 
@@ -89,7 +88,7 @@ It is more than double of the average of label counts.
 
 ## 4.
 
-90%
+Recall on negatives	≥ 0.60	Ensures the model identifies at least 60% of actual dissatisfying restaurants that is not recommended to go again.
 
 
 

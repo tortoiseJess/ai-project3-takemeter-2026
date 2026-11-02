@@ -5,6 +5,6 @@
 #
 # Delete the examples below and put yours in.
 
-positive: customer explicitly expresses intent to go again or positive comments dominate in cases where no such comment was expressed.
-negative: Will not go again is expressed by customer Or If no such comment exist, and negative comments domainate.
-neutral: reviewer have equal amount of negaitve and positive comments or recommend others to go if have don't mind some trade offs or really craving a dish.
+Positive: customer explicitly expresses intent to go again or positive comments dominate in cases where no such comment was expressed.
+Negative: Will not go again is expressed by customer Or If no such comment exist, and negative comments domainate.
+Neutral: reviewer have equal amount of negaitve and positive comments or recommend others to go if have don't mind some trade offs or really craving a dish.
