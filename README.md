@@ -203,15 +203,21 @@ positive because positive comments dominated.
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-**Base model:**
+**Base model:** distilbert-base-uncased (the notebook default)
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Settings:** 3 epochs, learning rate 2e-5, batch size 16, seed 42, max length 128 tokens
 
-**Anything I changed from the defaults, and why:**
+**Anything I changed from the defaults, and why:** Nothing. I kept the notebook defaults as a baseline before tuning anything.
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+**Split sizes:** 130 train / 29 val / 29 test (188 labelled posts), stratified split.
+
+| Label    | Train | Val | Test |
+|----------|-------|-----|------|
+| Positive | 56    | 10  | 18   |
+| Negative | 35    | 12  | 7    |
+| Neutral  | 38    | 7   | 4    |
+
+Negative has only 7 test examples and Neutral has only 4. Both are under the ~8 cutoff, so metrics on those labels will swing a lot between seeds. That is a limit of the test set, not necessarily a problem with the model.
 
 
 
@@ -228,17 +234,21 @@ of next unit's variance. -->
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* How to fill in the Training Run section of the README (the model, settings, changes from defaults, and split sizes).
+- *What came back:* A draft pulled from my notebook and results.json: distilbert-base-uncased, 3 epochs, lr 2e-5, batch 16, seed 42, and a 130/29/29 split with per-label counts, noting that Negative (7) and Neutral (4) are under the ~8 test-example cutoff.
+- *What I changed:* I checked the numbers against my notebook output before keeping them. I also questioned the "nothing changed" line and plan to try a tuning change (for example more epochs) instead of leaving the defaults. [Edit this if you decide differently.]
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* What the model is supposed to learn, and whether I should tune anything.
+- *What came back:* An explanation that it is a 3-class classifier (Positive / Negative / Neutral), and suggestions to try more epochs, a different learning rate or a smaller batch size, one at a time. It also pointed out that my training loss was still high and that the 29-post test set is too small to show small differences.
+- *What I changed:* [Fill in what you actually did, e.g. "I tried 5 epochs and accuracy went from X to Y", or "I kept the defaults because ..."].
 
 **Pre-labelling disclosure:**
+1. I labelled the first 43 posts myself.
+2. I worked out the labelling instructions from those.
+3. I used AI to collect the rest of the posts.
+4. I used AI to pre-label them, and I read and checked every one of them.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
